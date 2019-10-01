@@ -1,0 +1,834 @@
+@import "reset";
+
+@color_1: #000000;
+@color_2: #ffffff;
+@color_3: #289c2d;
+@color_4: #93ca8c;
+@color_5: #2c2c2c;
+@font_family_1: Arial, Helvetica, sans-serif;
+@background_color_1: #ffffff;
+@background_color_2: #4e3c26;
+@background_color_3: #694a27;
+@background_color_4: #ffffff7a;
+@background_color_5: #ffffffa8;
+@background_color_6: #4b4b4b;
+@background_color_7: #289c2d;
+@background_color_8: #e75555;
+@background_color_9: #ffffff69;
+@background_color_10: #ffafaf;
+@background_color_11: #9b9b9b;
+@background_color_12: #ffffff8c;
+@background_color_13: #2c2c2c;
+
+/************************************** general **************************************/
+/************************************** header **************************************/
+/************************************** header elements **************************************/
+/************************************** header form **************************************/
+/************************************** timer for header **************************************/
+/************************************** MQ for header **************************************/
+/************************************** main **************************************/
+/************************************** MQ for main **************************************/
+/************************************** mainContainer **************************************/
+/************************************** categoryName **************************************/
+/************************************** MQ for categoryName **************************************/
+/************************************** opacityMask **************************************/
+/************************************** categoryContainer **************************************/
+/************************ MQ for categoryContainer *************************************/
+/************************************** footer **************************************/
+/************************************** MQ for footer **************************************/
+/************************************** buttons **************************************/
+/************************************** creating recipe **************************************/
+/************************************** show recipe **************************************/
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: @font_family_1;
+	color: @color_1;
+	background-color: @background_color_1;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	background-color: @background_color_2;
+	padding: 10px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 94px;
+	>a {
+		color: @color_2;
+		text-align: center;
+		padding: 22px 12px;
+		text-decoration: none;
+		font-size: 18px;
+		line-height: 20px;
+		border-radius: 6px;
+		margin: 6px 6px;
+		&:hover {
+			background-color: @background_color_3;
+			color: @color_2;
+		}
+	}
+	>a.logo {
+		padding: 10px 12px;
+	}
+	>.searchBar {
+		margin: auto 0;
+		display: flex;
+		flex-direction: row;
+		align-items: left;
+		flex-grow: 1;
+		padding: 12px 6px;
+		flex-wrap: nowrap;
+	}
+	>.timerHeader {
+		text-align: center;
+		padding: 10px 12px;
+		margin: auto 6px;
+	}
+}
+.searchBar {
+	>.searchField {
+		width: 30px;
+		box-sizing: border-box;
+		border: 2px solid #352615;
+		border-radius: 4px;
+		font-size: 18px;
+		background-color: @background_color_3;
+		background-image: url('../images/icons/searchWhite2020.png');
+		background-position: 10px 10px;
+		background-repeat: no-repeat;
+		padding: 10px 20px;
+		-webkit-transition: width 0.4s ease-in-out;
+		transition: width 0.4s ease-in-out;
+		&:focus {
+			width: 100%;
+			background-image: none;
+			color: @color_2;
+		}
+	}
+}
+.timerHeaderText {
+	color: @color_3;
+	font-size: 32px;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding-top: 94px;
+}
+.mainContainer {
+	height: 100%;
+	min-height: 100vh;
+}
+.containerName {
+	display: flex;
+	flex-direction: row;
+	padding: 12px 48px;
+	color: @color_3;
+	background: #5f3614;
+	position: sticky;
+	top: 94px;
+	>h2 {
+		font-size: 48px;
+		font-weight: bold;
+		flex-grow: 1;
+	}
+	>a.categoryLink {
+		text-decoration: none;
+		flex-grow: 0;
+		font-size: 32px;
+		font-weight: bold;
+		color: @color_4;
+		margin: auto;
+	}
+}
+.opacityMask {
+	background-color: @background_color_4;
+}
+.categoryContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 32px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	justify-content: safe;
+	align-items: center;
+	height: 100%;
+}
+.dishContainerSmall {
+	display: flex;
+	flex-direction: row;
+	padding: 12px;
+	border: 2px solid #352615;
+	background-color: @background_color_5;
+	flex: 0 1 450px;
+	min-height: 300px;
+	margin: 6px;
+}
+.dishImgContainer {
+	padding-right: 6px;
+	width: 40%;
+}
+.dishImg {
+	width: 100%;
+	max-width: 200px;
+	height: auto;
+}
+.dishDesciptionContainer {
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+}
+.dishName {
+	font-size: 32px;
+	border-bottom: 2px solid #000000;
+}
+.dishDesciption {
+	text-align: justify;
+	color: @color_5;
+	line-height: 1.2;
+}
+a.dishLink {
+	text-decoration: none;
+	color: @color_1;
+	border-top: 2px solid #000000;
+	font-weight: bold;
+}
+.mainCategory {
+	background-image: url('../images/backgrounds/mainDish.jpg');
+}
+.soupCategory {
+	background-image: url('../images/backgrounds/soup.jpg');
+}
+.garnCategory {
+	background-image: url('../images/backgrounds/garn.jpg');
+}
+.salCategory {
+	background-image: url('../images/backgrounds/sal.jpg');
+}
+.desCategory {
+	background-image: url('../images/backgrounds/des.jpg');
+}
+.customCategory {
+	background-image: url('../images/backgrounds/custom.jpg');
+}
+footer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	background-color: @background_color_2;
+	padding: 10px;
+	width: 100%;
+	color: @color_2;
+	a {
+		color: @color_2;
+		text-align: center;
+		padding: 12px;
+		text-decoration: none;
+		font-size: 18px;
+		line-height: 20px;
+		border-radius: 6px;
+		margin: 6px 6px;
+		&:hover {
+			background-color: @background_color_3;
+			color: @color_2;
+		}
+	}
+	a.footerLinkHome {
+		font-weight: bold;
+	}
+	.copyrightText {
+		color: @color_2;
+		text-align: center;
+		padding: 12px;
+		font-size: 18px;
+		line-height: 20px;
+		border-radius: 6px;
+		margin: 6px 6px;
+		flex-grow: 1;
+		text-align: left;
+	}
+}
+.buttonPanel {
+	background-color: @background_color_6;
+	position: sticky;
+	display: flex;
+	flex-direction: row;
+	bottom: 0;
+	height: 50px;
+	justify-content: space-around;
+}
+.addRecipeButton {
+	text-align: center;
+	font-size: 18px;
+	margin: 0 auto;
+	text-align: center;
+	width: 50%;
+	padding: 16px 0;
+	border: none;
+	cursor: pointer;
+	color: @color_2;
+	text-decoration: none;
+	background-color: @background_color_7;
+}
+.removeRecipeButton {
+	text-align: center;
+	font-size: 18px;
+	margin: 0 auto;
+	text-align: center;
+	width: 50%;
+	padding: 16px 0;
+	border: none;
+	cursor: pointer;
+	color: @color_2;
+	text-decoration: none;
+	background-color: @background_color_8;
+}
+.formContainer {
+	display: flex;
+	flex-direction: column;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url('../images/backgrounds/custom.jpg');
+	font-weight: bold;
+	min-height: 100vh;
+}
+.creatingRecipeForm {
+	display: flex;
+	flex-direction: column;
+	padding: 12px;
+	background-color: @background_color_9;
+	margin: 0 auto;
+	height: 100%;
+	max-width: 960px;
+	input[type=text] {
+		padding: 6px;
+		border: 1px solid #000000;
+		border-radius: 4px;
+		resize: vertical;
+	}
+	input.faulty {
+		background-color: @background_color_10;
+	}
+	textarea.faulty {
+		background-color: @background_color_10;
+	}
+}
+select {
+	padding: 6px;
+	border: 1px solid #000000;
+	border-radius: 4px;
+	resize: vertical;
+}
+textarea {
+	padding: 6px;
+	border: 1px solid #000000;
+	border-radius: 4px;
+	resize: vertical;
+}
+.dishNameFormContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto 0;
+	padding-bottom: 3px;
+	label {
+		flex-grow: 1;
+		margin: auto 0;
+	}
+	input {
+		width: 50%;
+	}
+}
+.dishCategoryFormContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto 0;
+	padding-bottom: 3px;
+	label {
+		flex-grow: 1;
+		margin: auto 0;
+	}
+	select {
+		width: 50%;
+	}
+}
+.ingredientFormContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto 0;
+	padding-bottom: 3px;
+	display: flex;
+	flex-direction: row;
+	justify-content: stretch;
+	margin: auto 0;
+}
+.ingredient2FieldContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto 0;
+	padding-bottom: 3px;
+}
+.dishDesciptionFormContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto 0;
+	padding-bottom: 3px;
+	label {
+		flex-grow: 1;
+		margin: auto 0;
+	}
+	textarea {
+		width: 50%;
+		min-height: 100px;
+		resize: vertical;
+		font-family: @font_family_1;
+	}
+}
+.requiredToolsFormContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto 0;
+	padding-bottom: 3px;
+	label {
+		flex-grow: 1;
+		margin: auto 0;
+	}
+	textarea {
+		width: 50%;
+		min-height: 100px;
+		resize: vertical;
+		font-family: @font_family_1;
+	}
+}
+.flexIngredientField {
+	label {
+		flex-grow: 1;
+		margin: auto 0;
+	}
+	input {
+		flex: 0 1 100px;
+		max-width: 150px;
+	}
+}
+.flexAmountField {
+	label {
+		flex-grow: 1;
+		margin: auto 0;
+	}
+	input {
+		flex: 0 1 100px;
+		max-width: 60px;
+		height: 32px;
+	}
+}
+.flexUnitField {
+	label {
+		flex-grow: 1;
+		margin: auto 0;
+	}
+	select {
+		flex: 0 1 100px;
+		max-width: 100px;
+		height: 32px;
+	}
+}
+.addNewIngrBtnContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin: auto 0;
+	padding-bottom: 3px;
+	>button {
+		padding: 6px;
+		background: #289c2d;
+		color: @color_2;
+		border: none;
+		font-weight: 700;
+		text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000;
+	}
+}
+.addNewActBtnContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin: auto 0;
+	padding-bottom: 3px;
+	>button {
+		padding: 6px;
+		background: #289c2d;
+		color: @color_2;
+		border: none;
+		font-weight: 700;
+		text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000;
+	}
+}
+.actionFormContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto 0;
+	padding-bottom: 3px;
+}
+.flexActionField {
+	flex-flow: row;
+	>label {
+		margin: auto 0;
+		vertical-align: top;
+	}
+	textarea {
+		max-width: 180px;
+		min-height: 100px;
+		font-family: @font_family_1;
+	}
+}
+.flexTimerCheckboxField {
+	>label {
+		margin: auto 0;
+		vertical-align: top;
+	}
+	>input {
+		padding: 14px;
+	}
+}
+.flexTimerValueField {
+	>label {
+		margin: auto 0;
+		vertical-align: top;
+	}
+	input {
+		max-width: 40px;
+	}
+}
+.fullBtn {
+	width: 100%;
+}
+.disabledBtn {
+	background: #4b4b4b;
+	cursor: not-allowed;
+}
+button.disabledBtn {
+	background: #4b4b4b;
+	cursor: not-allowed;
+}
+.showDishDescriptionContainer {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	justify-content: stretch;
+	align-items: center;
+	min-height: 100vh;
+}
+.dishDescriptionContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 12px;
+	background-color: @background_color_9;
+	margin: 0 auto;
+	height: 100%;
+	max-width: 960px;
+}
+.dishImgAndDescriptionContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto 0;
+	padding-bottom: 3px;
+}
+.dishTextContent {
+	padding-left: 6px;
+}
+.dishDescriptionTextContainer {
+	flex: 1 1;
+	margin: 0 auto;
+}
+.disDescriptionText {
+	text-align: justify;
+}
+.dishRequiredIngredientsContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border-top: 2px solid #000000;
+	padding: 3px 0;
+}
+.dishIngredientName {
+	flex: 0 0 50%;
+}
+.dishIngredientValue {
+	flex-grow: 1;
+	text-align: left;
+}
+.ingTitleText {
+	margin-bottom: 6px;
+	font-weight: 900;
+}
+.redBackgroundBtn {
+	background-color: @background_color_8;
+}
+.dishActionContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 3px 0;
+	padding: 6px 3px;
+	background-color: @background_color_11;
+	color: @color_2;
+	border: 2px solid #ffffff;
+	border-radius: 6px;
+}
+.actionText {
+	display: flex;
+	flex: 0 1 90%;
+	text-align: justify;
+	padding-right: 6px;
+}
+.timerBtn {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto 0;
+	border-radius: 5px;
+	padding: 3px;
+	&:hover {
+		background-color: @background_color_12;
+	}
+}
+.checkboxContainer {
+	display: flex;
+	align-items: center;
+}
+.dishActionContainer.currentAction {
+	background-color: @background_color_7;
+}
+.dishActionContainer.completeAction {
+	background-color: @background_color_13;
+}
+.dishContainerSmall.activeDishContainerSmall {
+	background-color: @background_color_1;
+}
+.contact {
+	height: 100;
+}
+.contactTextContainer {
+	display: flex;
+	background-color: @background_color_9;
+	width: 100%;
+	height: 50vh;
+	padding: 3px;
+}
+.aboutTextContainer {
+	display: flex;
+	background-color: @background_color_9;
+	width: 100%;
+	height: 50vh;
+	padding: 3px;
+}
+.textInformationContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 32px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	justify-content: stretch;
+	align-items: center;
+	background-image: url(../images/backgrounds/custom.jpg);
+	height: 100vh;
+	align-content: baseline;
+}
+div.categoryContainer.mainCategory.showCat {
+	background-image: url('../images/backgrounds/mainDish.jpg');
+	min-height: 100vh;
+	align-content: baseline;
+}
+div.categoryContainer.soupCategory.showCat {
+	background-image: url('../images/backgrounds/soup.jpg');
+	min-height: 100vh;
+	align-content: baseline;
+}
+div.categoryContainer.garnCategory.showCat {
+	background-image: url('../images/backgrounds/garn.jpg');
+	min-height: 100vh;
+	align-content: baseline;
+}
+div.categoryContainer.salCategory.showCat {
+	background-image: url('../images/backgrounds/sal.jpg');
+	min-height: 100vh;
+	align-content: baseline;
+}
+div.categoryContainer.desCategory.showCat {
+	background-image: url('../images/backgrounds/des.jpg');
+	min-height: 100vh;
+	align-content: baseline;
+}
+div.categoryContainer.customCategory.showCat {
+	background-image: url('../images/backgrounds/custom.jpg');
+	min-height: 100vh;
+	align-content: baseline;
+}
+@media screen and (max-width: 640px) {
+	header {
+		width: 100vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0;
+		height: 50px;
+		>a.logo {
+			content: url("../images/icons/homeWhite.png");
+			height: 30px;
+			width: 30px;
+			padding: 0;
+		}
+		>.searchBar {
+			padding: 0;
+			flex-grow: 0;
+			margin-top: 6px;
+		}
+		>a.about {
+			content: url("../images/icons/info-circleWhite.png");
+			height: 30px;
+			width: 30px;
+			padding: 0;
+		}
+		>a.contact {
+			content: url("../images/icons/envelopeWhite.png");
+			height: 30px;
+			width: 30px;
+			padding: 0;
+		}
+	}
+	.searchBar {
+		>.searchField {
+			padding: 4px 15px;
+			background-position: center;
+		}
+	}
+	main {
+		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		padding-top: 50px;
+	}
+	.containerName {
+		padding: 6px;
+		top: 50px;
+		>h2 {
+			font-size: 24px;
+			font-weight: bold;
+			flex-grow: 1;
+		}
+		>a.categoryLink {
+			text-decoration: none;
+			flex-grow: 0;
+			font-size: 16px;
+			font-weight: bold;
+			color: @color_4;
+			margin: auto;
+		}
+	}
+	.categoryContainer {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 3px;
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin: 0 auto;
+		align-items: center;
+		height: 100%;
+	}
+	.dishContainerSmall {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		padding: 3px;
+		border: 1px solid #352615;
+		margin: 3px;
+	}
+	.dishImgContainer {
+		width: 100%;
+		text-align: center;
+	}
+	.dishImg {
+		width: 100%;
+		max-width: 300px;
+	}
+	.dishDesciptionContainer {
+		display: flex;
+		flex-direction: column;
+		padding: 0 0 0 3px;
+		margin: 0;
+		width: 100%;
+	}
+	.dishName {
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 24px;
+	}
+	footer {
+		padding: 3px;
+		a {
+			color: @color_2;
+			text-align: center;
+			padding: 3px;
+			text-decoration: none;
+			font-size: 12px;
+			border-radius: 2px;
+			margin: 2px;
+		}
+		.copyrightText {
+			color: @color_2;
+			text-align: center;
+			padding: 3px;
+			font-size: 12px;
+			border-radius: 2px;
+			margin: 2px;
+			flex-grow: 1;
+			text-align: left;
+		}
+	}
+	.dishImgAndDescriptionContainer {
+		flex-direction: column;
+	}
+	.dishDescriptionImgContainer {
+		margin: 0 auto;
+	}
+	.dishTextContent {
+		margin: 6px auto;
+	}
+}
